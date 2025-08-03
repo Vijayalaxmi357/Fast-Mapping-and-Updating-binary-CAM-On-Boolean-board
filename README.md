@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fast Mapping and Updating BCAM on Boolean Board</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     :root {
       --bg:#0f111a;
@@ -14,6 +14,7 @@
       --text:#e3e9ff;
       font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     }
+    *{box-sizing:border-box;}
     body {
       margin:0;
       background: linear-gradient(135deg,#0f111a 0%,#1c223b 100%);
@@ -30,13 +31,7 @@
       display:grid;
       gap:1.5rem;
     }
-    h1 {
-      margin:0;
-      font-size:2.2rem;
-      display:flex;
-      align-items:center;
-      gap:.5rem;
-    }
+    h1 { margin:0; font-size:2.2rem; display:flex; align-items:center; gap:.5rem; }
     .badge {
       background: var(--accent);
       padding:6px 12px;
@@ -59,9 +54,7 @@
       gap:.5rem;
       margin-bottom:.5rem;
     }
-    ul {
-      padding-left:1.25rem;
-    }
+    ul { padding-left:1.25rem; }
     code {
       background: rgba(255,255,255,0.08);
       padding:2px 6px;
@@ -71,22 +64,17 @@
     }
     .grid-2 {
       display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
       gap:1.25rem;
     }
-    .feature {
-      margin-bottom:1rem;
-    }
+    .feature { margin-bottom:1rem; }
     .footer {
       text-align:center;
       font-size:.8rem;
       margin-top:2rem;
       opacity:.75;
     }
-    a {
-      color: var(--accent);
-      text-decoration:none;
-    }
+    a { color: var(--accent); text-decoration:none; }
     .pill {
       background: rgba(255,255,255,0.07);
       padding:4px 10px;
@@ -99,51 +87,51 @@
 </head>
 <body>
   <div class="container">
-    <div class="card">
+    <header class="card">
       <h1>
-        Fast Mapping and Updating Binary Content Addressable Memory (BCAM) 
+        Fast Mapping and Updating <br/> <span style="font-weight:600;">Binary Content Addressable Memory (BCAM)</span>
         <span class="badge">Project</span>
       </h1>
       <p>
-        This project implements a parameterized Binary Content Addressable Memory (BCAM) in Verilog HDL, optimized for fast mapping and updating operations on an FPGA-based Boolean Board. The BCAM supports single-cycle lookups and efficient partial/full entry updates without full memory reload. Two architectures — <strong>Register-based (REG)</strong> and <strong>Segmented Transposed RAM (STR)</strong> — are explored to trade off between resource usage and update speed.
+        Parameterized BCAM in Verilog for Boolean Board FPGA, supporting single-cycle lookups and efficient updates via REG and STR architectures.
       </p>
-    </div>
+    </header>
 
-    <div class="card">
+    <section class="card">
       <div class="section-title">
         <h2 style="margin:0; font-size:1.5rem;">Overview</h2>
       </div>
       <p>
-        The design is deployed and validated on a Boolean Board FPGA platform using hardware-in-the-loop techniques for real-time pattern matching. Performance metrics such as mapping latency, update time, and resource utilization are analyzed and compared across architectures to guide design decisions in embedded and networking applications.
+        Deployed on a Boolean Board with hardware-in-the-loop validation. Metrics such as mapping latency, update time, and resource utilization are measured to inform embedded/networking design trade-offs.
       </p>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <div class="section-title">
         <h2 style="margin:0; font-size:1.5rem;">Key Features</h2>
       </div>
       <ul>
-        <li><strong>Configurable Parameters:</strong> Adjustable CAM depth and width to suit different requirements.</li>
-        <li><strong>Multiple Architectures:</strong> REG for simplicity and speed; STR for better resource efficiency.</li>
-        <li><strong>Fast Update Mechanism:</strong> Supports partial and full entry updates with minimal delay.</li>
-        <li><strong>FPGA Integration:</strong> Synthesizable Verilog design ready for Boolean Board deployment.</li>
-        <li><strong>Verification:</strong> Comprehensive simulation (ModelSim/Vivado) and on-board hardware testing.</li>
+        <li><strong>Configurable Parameters:</strong> Adjustable CAM depth and width.</li>
+        <li><strong>Multiple Architectures:</strong> REG for speed; STR for resource efficiency.</li>
+        <li><strong>Fast Updates:</strong> Partial/full entry updates with minimal delay.</li>
+        <li><strong>FPGA Ready:</strong> Synthesizable Verilog for Boolean Board.</li>
+        <li><strong>Verification:</strong> Simulation + On-board testing.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <div class="section-title">
         <h2 style="margin:0; font-size:1.5rem;">Applications</h2>
       </div>
       <ul>
-        <li>High-speed packet classification in routers and switches</li>
-        <li>Network intrusion detection systems</li>
-        <li>Address lookup tables in embedded processors</li>
-        <li>Pattern recognition systems</li>
+        <li>High-speed packet classification</li>
+        <li>Network intrusion detection</li>
+        <li>Embedded address lookups</li>
+        <li>Pattern recognition</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <div class="section-title">
         <h2 style="margin:0; font-size:1.5rem;">Technologies Used</h2>
       </div>
@@ -153,42 +141,40 @@
           <p>Verilog</p>
         </div>
         <div class="feature">
-          <div class="pill">FPGA Toolchain</div>
-          <p>Xilinx Vivado (or compatible for your Boolean board)</p>
+          <div class="pill">Toolchain</div>
+          <p>Xilinx Vivado (or compatible)</p>
         </div>
         <div class="feature">
           <div class="pill">Simulation</div>
           <p>ModelSim / Vivado Simulator</p>
         </div>
         <div class="feature">
-          <div class="pill">Testing Platform</div>
+          <div class="pill">Platform</div>
           <p>Boolean Board FPGA</p>
         </div>
         <div class="feature">
           <div class="pill">Optional</div>
-          <p>AXI interface for SoC integration</p>
+          <p>AXI interface</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <div class="section-title">
-        <h2 style="margin:0; font-size:1.5rem;">Getting Started (Placeholder)</h2>
+        <h2 style="margin:0; font-size:1.5rem;">Getting Started</h2>
       </div>
-      <p>
-        Replace this section with build and test instructions tailored to your FPGA board. Typical steps include:
-      </p>
+      <p>Typical build/test flow:</p>
       <ul>
-        <li>Install FPGA toolchain (e.g., Vivado)</li>
-        <li>Run synthesis and generate bitstream</li>
-        <li>Simulate using testbenches in ModelSim/Vivado</li>
-        <li>Deploy to Boolean Board and verify mapping/updating latency</li>
+        <li>Install FPGA toolchain (Vivado).</li>
+        <li>Synthesize and generate bitstream.</li>
+        <li>Run simulations with testbenches.</li>
+        <li>Deploy to Boolean Board and measure performance.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="footer">
-      <p>© 2025 Fast Mapping and Updating BCAM Project. Built for real-time hardware-accelerated pattern matching.</p>
-    </div>
+    <footer class="footer">
+      <p>© 2025 Fast Mapping and Updating BCAM Project. Real-time hardware-accelerated pattern matching.</p>
+    </footer>
   </div>
 </body>
 </html>
