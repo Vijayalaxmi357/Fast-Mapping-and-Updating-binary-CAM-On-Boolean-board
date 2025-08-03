@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fast Mapping and Updating BCAM on Boolean Board</title>
+
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   
 </head>
