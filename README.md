@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fast Mapping and Updating BCAM</title>
+
 </head>
 <body>
   <h1>Fast Mapping and Updating Binary Content Addressable Memory (BCAM) Project</h1>
