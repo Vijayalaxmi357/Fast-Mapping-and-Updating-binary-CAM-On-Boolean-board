@@ -1,4 +1,3 @@
-# Fast-Mapping-and-Updating-binary-CAM-On-Boolean-board
 <!DOCTYPE html>
 <html lang="en">
 <head>
